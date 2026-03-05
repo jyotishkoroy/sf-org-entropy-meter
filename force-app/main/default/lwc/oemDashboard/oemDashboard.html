@@ -1,0 +1,82 @@
+<template>
+  <div class="shell">
+    <lightning-layout multiple-rows="true">
+      <lightning-layout-item size="12" medium-device-size="3">
+        <lightning-card title="Entropy Index">
+          <div class="slds-p-around_medium slds-align_absolute-center">
+            <c-oem-entropy-ring score={snap.entropyIndex} label="Entropy" hint="Higher is worse"></c-oem-entropy-ring>
+          </div>
+          <div class="slds-p-horizontal_medium slds-p-bottom_medium">
+            <template if:true={snap}>
+              <div class="slds-text-body_small slds-text-color_weak">Org: {snap.orgName}</div>
+              <div class="slds-text-body_small slds-text-color_weak">Snapshot: {snapDateText}</div>
+              <div class="slds-text-body_small slds-text-color_weak">Status: {snap.status}</div>
+            </template>
+            <template if:false={snap}>
+              <div class="slds-text-color_weak">No snapshots yet. Run the first one from Setup.</div>
+            </template>
+          </div>
+        </lightning-card>
+      </lightning-layout-item>
+
+      <lightning-layout-item size="12" medium-device-size="9">
+        <lightning-card title="Domain Scores + Trend">
+          <div class="slds-p-around_medium twoCol">
+            <div class="tileGrid">
+              <div class="tile"><div class="tlabel">Change Velocity</div><div class="tval">{snap.changeVelocity}</div></div>
+              <div class="tile"><div class="tlabel">Automation Sprawl</div><div class="tval">{snap.automationSprawl}</div></div>
+              <div class="tile"><div class="tlabel">Permission Sprawl</div><div class="tval">{snap.permissionSprawl}</div></div>
+              <div class="tile"><div class="tlabel">Duplication</div><div class="tval">{snap.duplication}</div></div>
+              <div class="tile"><div class="tlabel">Hotspots</div><div class="tval">{snap.hotspots}</div></div>
+            </div>
+
+            <div>
+              <div class="slds-grid slds-wrap slds-grid_vertical-align-center slds-m-bottom_small">
+                <div class="slds-col slds-size_1-of-2">
+                  <lightning-combobox name="window" label="Trend Window" value={windowDays} options={windowOptions} onchange={handleWindowChange}></lightning-combobox>
+                </div>
+                <div class="slds-col slds-size_1-of-2 slds-text-align_right slds-p-top_large">
+                  <lightning-button label="Refresh" onclick={refresh}></lightning-button>
+                </div>
+              </div>
+              <c-oem-trend-chart series={trend}></c-oem-trend-chart>
+            </div>
+          </div>
+        </lightning-card>
+      </lightning-layout-item>
+
+      <lightning-layout-item size="12">
+        <lightning-card title="Acceleration alerts">
+          <div class="slds-p-around_medium">
+            <template if:true={loading}>
+              <lightning-spinner alternative-text="Loading"></lightning-spinner>
+            </template>
+            <template if:true={alerts.length}>
+              <lightning-datatable key-field="id" data={alerts} columns={alertColumns} hide-checkbox-column="true"></lightning-datatable>
+            </template>
+            <template if:false={alerts.length}>
+              <div class="slds-text-color_weak">No acceleration alerts yet (need at least two snapshots).</div>
+            </template>
+          </div>
+        </lightning-card>
+      </lightning-layout-item>
+
+      <lightning-layout-item size="12">
+        <lightning-card title="Measures">
+          <div class="slds-p-around_medium">
+            <div class="slds-grid slds-wrap slds-grid_vertical-align-end slds-m-bottom_small">
+              <div class="slds-col slds-size_1-of-2 slds-p-right_small">
+                <lightning-combobox name="domain" label="Domain" value={filterDomain} options={domainOptions} onchange={handleDomainChange}></lightning-combobox>
+              </div>
+              <div class="slds-col slds-size_1-of-2 slds-text-align_right slds-p-top_large">
+                <lightning-button variant="neutral" label="Load" onclick={loadMeasures}></lightning-button>
+              </div>
+            </div>
+            <lightning-datatable key-field="id" data={measures} columns={measureColumns} hide-checkbox-column="true"></lightning-datatable>
+            <div class="credit">© 2026 <a href="https://orcid.org/0009-0000-2837-4731" target="_blank" rel="noopener noreferrer">Jyotishko Roy</a></div>
+          </div>
+        </lightning-card>
+      </lightning-layout-item>
+    </lightning-layout>
+  </div>
+</template>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Domain__c</fullName>
+    <label>Domain</label>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value><fullName>Change Velocity</fullName><default>false</default><label>Change Velocity</label></value>
+            <value><fullName>Automation Sprawl</fullName><default>false</default><label>Automation Sprawl</label></value>
+            <value><fullName>Permission Sprawl</fullName><default>false</default><label>Permission Sprawl</label></value>
+            <value><fullName>Duplication</fullName><default>false</default><label>Duplication</label></value>
+            <value><fullName>Hotspots</fullName><default>false</default><label>Hotspots</label></value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

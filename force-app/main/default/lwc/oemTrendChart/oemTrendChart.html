@@ -1,0 +1,17 @@
+<template>
+  <div class="chart">
+    <template if:true={hasData}>
+      <svg viewBox="0 0 600 220" preserveAspectRatio="none" class="svg">
+        <path d={areaPath} class="area"></path>
+        <path d={linePath} class="line"></path>
+        <template for:each={points} for:item="p">
+          <circle key={p.key} cx={p.x} cy={p.y} r="3" class="pt"></circle>
+        </template>
+      </svg>
+      <div class="axis"><span>0</span><span class="spacer"></span><span>100</span></div>
+    </template>
+    <template if:false={hasData}>
+      <div class="empty slds-text-color_weak">No trend data yet.</div>
+    </template>
+  </div>
+</template>

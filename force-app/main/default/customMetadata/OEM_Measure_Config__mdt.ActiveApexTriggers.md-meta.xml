@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Active Apex Triggers</label>
+    <protected>false</protected>
+    <values><field>Domain__c</field><value><stringValue>Automation Sprawl</stringValue></value></values>
+    <values><field>MeasureKey__c</field><value><stringValue>ActiveApexTriggers</stringValue></value></values>
+    <values><field>Weight__c</field><value><numberValue>1</numberValue></value></values>
+    <values><field>GreenMax__c</field><value><numberValue>20</numberValue></value></values>
+    <values><field>YellowMax__c</field><value><numberValue>60</numberValue></value></values>
+    <values><field>Units__c</field><value><stringValue>triggers</stringValue></value></values>
+    <values><field>Enabled__c</field><value><booleanValue>true</booleanValue></value></values>
+</CustomMetadata>

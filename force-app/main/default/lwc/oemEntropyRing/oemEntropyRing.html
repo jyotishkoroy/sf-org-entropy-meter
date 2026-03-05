@@ -1,0 +1,13 @@
+<template>
+  <div class="ring" title={label}>
+    <svg viewBox="0 0 120 120" class="svg">
+      <circle class="track" cx="60" cy="60" r="48"></circle>
+      <circle class="value" cx="60" cy="60" r="48" style={strokeStyle}></circle>
+    </svg>
+    <div class="center">
+      <div class="score">{score}</div>
+      <div class="label">{label}</div>
+      <div class="hint">{hint}</div>
+    </div>
+  </div>
+</template>

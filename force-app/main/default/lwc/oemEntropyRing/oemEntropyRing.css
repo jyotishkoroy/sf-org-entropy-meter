@@ -1,0 +1,8 @@
+.ring{position:relative;width:150px;height:150px;display:grid;place-items:center}
+.svg{width:150px;height:150px;transform:rotate(-90deg)}
+.track{fill:none;stroke:rgba(0,0,0,0.08);stroke-width:10}
+.value{fill:none;stroke:currentColor;stroke-width:10;stroke-linecap:round;stroke-dasharray:0 999;color:rgba(136,84,208,0.85)}
+.center{position:absolute;display:grid;place-items:center;gap:.1rem;text-align:center}
+.score{font-size:2rem;font-weight:700;line-height:1}
+.label{font-size:.8rem;opacity:.75}
+.hint{font-size:.7rem;opacity:.6}

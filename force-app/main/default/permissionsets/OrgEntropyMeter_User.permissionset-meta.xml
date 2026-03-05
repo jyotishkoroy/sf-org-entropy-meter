@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Org Entropy Meter User</label>
+    <description>Read-only access for Org Entropy Meter.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <classAccesses><apexClass>OEM_DashboardController</apexClass><enabled>true</enabled></classAccesses>
+    <objectPermissions>
+        <object>OEM_Entropy_Snapshot__c</object>
+        <allowCreate>false</allowCreate><allowRead>true</allowRead><allowEdit>false</allowEdit><allowDelete>false</allowDelete>
+        <viewAllRecords>true</viewAllRecords><modifyAllRecords>false</modifyAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <object>OEM_Entropy_Finding__c</object>
+        <allowCreate>false</allowCreate><allowRead>true</allowRead><allowEdit>false</allowEdit><allowDelete>false</allowDelete>
+        <viewAllRecords>true</viewAllRecords><modifyAllRecords>false</modifyAllRecords>
+    </objectPermissions>
+    <tabSettings><tab>OEM_Dashboard</tab><visibility>Visible</visibility></tabSettings>
+    <tabSettings><tab>OEM_Entropy_Snapshot__c</tab><visibility>Visible</visibility></tabSettings>
+    <tabSettings><tab>OEM_Entropy_Finding__c</tab><visibility>Visible</visibility></tabSettings>
+</PermissionSet>

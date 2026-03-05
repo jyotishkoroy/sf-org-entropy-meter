@@ -1,0 +1,9 @@
+{
+  "orgName": "Org Entropy Meter",
+  "edition": "Developer",
+  "settings": {
+    "lightningExperienceSettings": {
+      "enableS1DesktopEnabled": true
+    }
+  }
+}

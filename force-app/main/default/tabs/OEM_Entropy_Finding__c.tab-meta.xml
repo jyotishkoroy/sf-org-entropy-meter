@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Entropy Findings</label>
+    <mobileReady>true</mobileReady>
+    <motif>Custom18: Form</motif>
+    <sobjectName>OEM_Entropy_Finding__c</sobjectName>
+</CustomTab>

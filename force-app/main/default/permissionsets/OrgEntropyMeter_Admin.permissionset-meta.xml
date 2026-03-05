@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Org Entropy Meter Admin</label>
+    <description>Admin access for Org Entropy Meter.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <classAccesses><apexClass>OEM_DashboardController</apexClass><enabled>true</enabled></classAccesses>
+    <classAccesses><apexClass>OEM_SetupController</apexClass><enabled>true</enabled></classAccesses>
+    <classAccesses><apexClass>OEM_SnapshotScheduler</apexClass><enabled>true</enabled></classAccesses>
+    <classAccesses><apexClass>OEM_SnapshotService</apexClass><enabled>true</enabled></classAccesses>
+    <objectPermissions>
+        <object>OEM_Entropy_Snapshot__c</object>
+        <allowCreate>true</allowCreate><allowRead>true</allowRead><allowEdit>true</allowEdit><allowDelete>true</allowDelete>
+        <viewAllRecords>true</viewAllRecords><modifyAllRecords>true</modifyAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <object>OEM_Entropy_Finding__c</object>
+        <allowCreate>true</allowCreate><allowRead>true</allowRead><allowEdit>true</allowEdit><allowDelete>true</allowDelete>
+        <viewAllRecords>true</viewAllRecords><modifyAllRecords>true</modifyAllRecords>
+    </objectPermissions>
+    <tabSettings><tab>OEM_Dashboard</tab><visibility>Visible</visibility></tabSettings>
+    <tabSettings><tab>OEM_Setup</tab><visibility>Visible</visibility></tabSettings>
+    <tabSettings><tab>OEM_Entropy_Snapshot__c</tab><visibility>Visible</visibility></tabSettings>
+    <tabSettings><tab>OEM_Entropy_Finding__c</tab><visibility>Visible</visibility></tabSettings>
+</PermissionSet>

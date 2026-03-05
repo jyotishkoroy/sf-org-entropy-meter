@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Hotspots</label>
+    <protected>false</protected>
+    <values><field>Domain__c</field><value><stringValue>Hotspots</stringValue></value></values>
+    <values><field>Weight__c</field><value><numberValue>1</numberValue></value></values>
+    <values><field>Enabled__c</field><value><booleanValue>true</booleanValue></value></values>
+</CustomMetadata>

@@ -1,0 +1,65 @@
+<template>
+  <div class="shell">
+    <lightning-card title="Org Entropy Meter Setup">
+      <div class="slds-p-around_medium">
+        <template if:true={loading}>
+          <lightning-spinner alternative-text="Loading"></lightning-spinner>
+        </template>
+
+        <div class="slds-grid slds-wrap slds-gutters">
+          <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+            <lightning-input type="text" label="Baseline label (optional)" value={baselineLabel} onchange={onBaselineChange}></lightning-input>
+            <div class="slds-m-top_small">
+              <lightning-button variant="brand" label="Run snapshot now" onclick={runNow}></lightning-button>
+            </div>
+
+            <div class="slds-m-top_large">
+              <div class="slds-text-title_caps slds-m-bottom_x-small">Scheduling</div>
+              <div class="slds-grid slds-gutters">
+                <div class="slds-col">
+                  <lightning-input type="number" label="Hour (0-23)" value={hour} min="0" max="23" onchange={onHour}></lightning-input>
+                </div>
+                <div class="slds-col">
+                  <lightning-input type="number" label="Minute (0-59)" value={minute} min="0" max="59" onchange={onMinute}></lightning-input>
+                </div>
+              </div>
+
+              <div class="slds-m-top_small slds-grid slds-gutters">
+                <div class="slds-col">
+                  <lightning-button variant="neutral" label="Schedule daily" onclick={schedule}></lightning-button>
+                </div>
+                <div class="slds-col">
+                  <lightning-button variant="destructive" label="Unschedule" onclick={unschedule}></lightning-button>
+                </div>
+              </div>
+
+              <template if:true={status}>
+                <div class="slds-m-top_small slds-text-color_weak">
+                  <template if:true={status.scheduled}>
+                    Scheduled. Next run: {status.nextFireTime}
+                  </template>
+                  <template if:false={status.scheduled}>
+                    Not scheduled.
+                  </template>
+                </div>
+              </template>
+            </div>
+          </div>
+
+          <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+            <div class="panel">
+              <div class="slds-text-title_caps">Operational notes</div>
+              <ul class="slds-list_dotted slds-m-top_small">
+                <li>Snapshots run as the scheduling user.</li>
+                <li>Some signals may show as "Not available" depending on permissions/edition.</li>
+                <li>Adjust thresholds/weights via Custom Metadata Types.</li>
+              </ul>
+            </div>
+
+            <div class="credit">© 2026 <a href="https://orcid.org/0009-0000-2837-4731" target="_blank" rel="noopener noreferrer">Jyotishko Roy</a></div>
+          </div>
+        </div>
+      </div>
+    </lightning-card>
+  </div>
+</template>

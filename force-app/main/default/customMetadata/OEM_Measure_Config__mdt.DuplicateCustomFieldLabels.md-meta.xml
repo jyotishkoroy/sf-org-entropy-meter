@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Duplicate Custom Field Labels</label>
+    <protected>false</protected>
+    <values><field>Domain__c</field><value><stringValue>Duplication</stringValue></value></values>
+    <values><field>MeasureKey__c</field><value><stringValue>DuplicateCustomFieldLabels</stringValue></value></values>
+    <values><field>Weight__c</field><value><numberValue>1</numberValue></value></values>
+    <values><field>GreenMax__c</field><value><numberValue>10</numberValue></value></values>
+    <values><field>YellowMax__c</field><value><numberValue>50</numberValue></value></values>
+    <values><field>Units__c</field><value><stringValue>labels</stringValue></value></values>
+    <values><field>Enabled__c</field><value><booleanValue>true</booleanValue></value></values>
+</CustomMetadata>

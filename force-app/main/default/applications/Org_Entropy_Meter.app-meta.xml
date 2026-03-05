@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Org Entropy Meter</label>
+    <description>Maintainability Drift Index: entropy scoring, trends, and acceleration alerts.</description>
+    <defaultLandingTab>OEM_Dashboard</defaultLandingTab>
+    <formFactor>Large</formFactor>
+    <uiType>Lightning</uiType>
+    <tabs>OEM_Dashboard</tabs>
+    <tabs>OEM_Entropy_Snapshot__c</tabs>
+    <tabs>OEM_Entropy_Finding__c</tabs>
+    <tabs>OEM_Setup</tabs>
+</CustomApplication>
